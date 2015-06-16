@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+  <title>Geolocation popup test</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0">
+</head>
+<body>
+<script>
+
+function doTest() {
+  if(!navigator.geolocation) {
+    console.log('browser does not support geolocation');
+    alert('browser does not support geolocation');
+    return;
+  }
+  navigator.geolocation.getCurrentPosition(function(pos) {
+    console.log('get current position :' + pos.coords);
+    alert('get current position successfully :'+pos.coords);
+  }, function(err) {
+    console.log('fail to get current position :' + err.code +' (' + err.message + ')');
+    alert('fail to get current position');
+  });
+  console.log('request the current position');
+}
+</script>
+
+<button onclick="doTest()"> Get current position </button>
+
+</body>
+</html>
