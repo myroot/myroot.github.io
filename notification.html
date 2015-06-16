@@ -26,9 +26,16 @@ function doTest() {
   });
   console.log('request the current position');
 }
+
+function showNoti() {
+  var notification = new Notification("Hi there!");
+  
+}
+
 </script>
 <center>
 <button onclick="doTest()"> Request Web notification permission </button>
+<button onclick="showNoti()"> Show notification </button>
 <button onclick="history.back(1)"> back </button>
 </center>
 </body>
