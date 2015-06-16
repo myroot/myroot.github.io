@@ -9,6 +9,10 @@
 <script>
 
 function doTest() {
+  navigator.getUserMedia = navigator.getUserMedia ||
+                           navigator.webkitGetUserMedia ||
+                           navigator.mozGetUserMedia;
+
   if(!navigator.getUserMedia) {
     console.log('browser does not support getUserMedia');
     alert('browser does not support getUserMedia');
