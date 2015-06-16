@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+  <title>getusermedia popup test</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0">
+</head>
+<body>
+<script>
+
+function doTest() {
+  if(!navigator.getUserMedia) {
+    console.log('browser does not support getUserMedia');
+    alert('browser does not support getUserMedia');
+    return;
+  }
+  navigator.getUserMedia({ audio: true },
+    function(stream) {
+      console.log('getting stream : ' + stream);
+      alert('successfuly getting stream :' + stream);
+    },
+    function(err) {
+      console.log("The following error occured: " + err.name);
+      alert("The following error occured: " + err.name);
+    });
+  console.log('request the getUserMedia');
+}
+</script>
+
+<button onclick="doTest()"> Get usermedia </button>
+
+</body>
+</html>
