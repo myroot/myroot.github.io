@@ -19,7 +19,11 @@ function doTest() {
     alert('browser does not support notification');
     return;
   }
-  Notification.requestPermission();
+  Notification.requestPermission(function(result){
+    console.log('request permission result :'+result);
+    alert('request permission result :'+result);
+    
+  });
   console.log('request the current position');
 }
 </script>
