@@ -19,7 +19,7 @@ function doTest() {
     alert('get current position successfully :'+pos.coords);
   }, function(err) {
     console.log('fail to get current position :' + err.code +' (' + err.message + ')');
-    alert('fail to get current position');
+    alert('fail to get current position :'+err.message);
   });
   console.log('request the current position');
 }
