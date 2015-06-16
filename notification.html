@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+  <title>Geolocation popup test</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0">
+  <style>
+    body {
+      background-color:white;
+    }
+  </style>
+</head>
+<body>
+<script>
+
+function doTest() {
+  if(!Notification) {
+    console.log('browser does not support notification');
+    alert('browser does not support notification');
+    return;
+  }
+  Notification.requestPermission();
+  console.log('request the current position');
+}
+</script>
+<center>
+<button onclick="doTest()"> Request Web notification permission </button>
+<button onclick="history.back(1)"> back </button>
+</center>
+</body>
+</html>
