@@ -2,12 +2,40 @@
 <head>
   <title> Fullscreen </title>
   <style>
-    body {
-      background-color:red;
-    }
+* {
+    font-family: Verdana, Lucida Sans, Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0px auto;
+    background-color:#222;
+}
+
+.contents {
+    display: flex;
+    display: -webkit-flex;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    height:320px;
+}
+
+
+.content_text {
+    font-weight:bold;
+    font-size:5em;
+    color:#fff;
+}
   </style>
 </head>
 <body>
+  
+  
+  <div class=contents>
+    <div style='margin:auto;'>
+        <span class=content_text id=textbox>Basic</span>
+    </div>
+  </div>
+  
 <script>
 
 function toggleFullScreen() {
