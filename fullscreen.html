@@ -43,8 +43,18 @@ function request() {
   toggleFullScreen();
 }
 
+function lock() {
+  screen.orientation.lock('portrait');
+}
+
+function unlock() {
+  screen.orientation.unlock();
+}
+
 </script>
 <button onclick="request()"> request </button>
+<button onclick="lock()"> lock </button>
+<button onclick="unlock()"> unlock </button>
 
 </body>
 </html>
