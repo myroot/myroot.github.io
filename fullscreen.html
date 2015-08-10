@@ -72,11 +72,23 @@ function request() {
 }
 
 function lock() {
-  screen.orientation.lock('portrait');
+  if (screen.lockOrientation) {
+    screen.lockOrientation('portrait');
+  } else if (screen.orientation.lock) {
+    screen.orientation.lock('portrait');
+  } else {
+    console.log("does not support orientation lock API");
+  }
 }
 
 function unlock() {
-  screen.orientation.unlock();
+  if (screen.unlockOrientation) {
+    screen.unlockOrientation();
+  } else if (screen.orientation.unlock) {
+    screen.orientation.unlock();
+  } else {
+    console.log("does not support orientation lock API");
+  }
 }
 
 </script>
