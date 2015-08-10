@@ -21,6 +21,8 @@ function toggleFullScreen() {
       document.documentElement.mozRequestFullScreen();
     } else if (document.documentElement.webkitRequestFullscreen) {
       document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+    } else {
+      console.log('dose not support fullscreen API');
     }
   } else {
     if (document.exitFullscreen) {
@@ -31,6 +33,8 @@ function toggleFullScreen() {
       document.mozCancelFullScreen();
     } else if (document.webkitExitFullscreen) {
       document.webkitExitFullscreen();
+    } else {
+      console.log('dose not support fullscreen API');
     }
   }
 }
