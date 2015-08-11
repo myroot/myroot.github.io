@@ -19,36 +19,34 @@ body {
     height:320px;
 }
 
+.red {
+  background-color:red;
+}
+
+.blue {
+  background-color:blue;
+}
+
 
 .content_text {
     font-weight:bold;
     font-size:5em;
     color:#fff;
 }
-  </style>
-</head>
-<body>
-  
-  
-  <div class=contents>
-    <div style='margin:auto;'>
-        <span class=content_text id=textbox>Basic</span>
-    </div>
-  </div>
+</style>
   
 <script>
-
-function toggleFullScreen() {
+function toggleFullScreen(target) {
   if (!document.fullscreenElement &&    // alternative standard method
       !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {  // current working methods
-    if (document.documentElement.requestFullscreen) {
-      document.documentElement.requestFullscreen();
-    } else if (document.documentElement.msRequestFullscreen) {
-      document.documentElement.msRequestFullscreen();
-    } else if (document.documentElement.mozRequestFullScreen) {
-      document.documentElement.mozRequestFullScreen();
-    } else if (document.documentElement.webkitRequestFullscreen) {
-      document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+    if (target.requestFullscreen) {
+      target.requestFullscreen();
+    } else if (target.msRequestFullscreen) {
+      target.msRequestFullscreen();
+    } else if (target.mozRequestFullScreen) {
+      target.mozRequestFullScreen();
+    } else if (target.webkitRequestFullscreen) {
+      target.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
     } else {
       console.log('dose not support fullscreen API');
     }
@@ -92,6 +90,22 @@ function unlock() {
 }
 
 </script>
+  
+</head>
+<body>
+  
+  
+  <div class='contents red'>
+    <div style='margin:auto;' onclick=toggleFullScreen(this)>
+        <span class=content_text id=textbox>Red</span>
+    </div>
+  </div>
+  
+  <div class='contents blue'>
+    <div style='margin:auto;' onclick=toggleFullScreen(this)>
+        <span class=content_text id=textbox>Blue</span>
+    </div>
+  </div>
 <button onclick="request()"> request </button>
 <button onclick="lock()"> lock </button>
 <button onclick="unlock()"> unlock </button>
