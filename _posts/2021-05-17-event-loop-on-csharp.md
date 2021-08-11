@@ -95,4 +95,4 @@ SynchronizationContext.SetSynchronizationContext(new MockSynchronizationContext(
 이런 동작을 가능하게 하는 SynchronizationContext를 제대로 알고 활용한다면 좀 더 효율적이고 재사용 가능한 소프트웨어 개발을 쉽게 할 수 있습니다.
 
 # 링크
- 예제 코드 https://github.sec.samsung.net/sngnlee/ExampleCode/tree/main/EventLoop
+ 예제 코드 [https://github.sec.samsung.net/sngnlee/ExampleCode/tree/main/EventLoop](https://github.sec.samsung.net/sngnlee/ExampleCode/tree/main/EventLoop)

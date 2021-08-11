@@ -61,6 +61,7 @@ await는 Task의 완료를 대기할 때, 어떤 Thread도 점유하지 않습�
 ```c#
 static async void AwaitAsyncExample()
 {
+    int localVariable = 1;
     Print("Before await code");
     await ASomeAsyncMethod();
     Print("After await code");
@@ -136,3 +137,4 @@ private static void AwaitAsyncExample()
 ## 링크
  * 디컴파일러(dot peek) : [https://www.jetbrains.com/ko-kr/decompiler/](https://www.jetbrains.com/ko-kr/decompiler/)
  * await operator : [https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/await](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/await)
+ * 예제 코드 : [https://github.sec.samsung.net/sngnlee/ExampleCode/tree/main/TaskExample](https://github.sec.samsung.net/sngnlee/ExampleCode/tree/main/TaskExample)
