@@ -7,6 +7,7 @@ Syntax sugar는 의미적으로는 동일하면서 코드를 좀 더 간결하�
 
 C#에서는 다양한 syntax sugar를 제공하고 있으며, 이 중 가독성에 큰 도움이 되는 문법에 대해 알아보려고 합니다.
 
+
 ## Object initializer
  Object initializer는 객체를 생성한 후 할당문을 별도로 추가하지 않고 객체의 Field나 Property를 생성과 함께 초기화 하는 방법입니다.
 

@@ -6,6 +6,7 @@ comments: true
 코드 리뷰 사례를 공유하기 위하여 글을 작성하였습니다. 
 이번 사례는 표현하려는 데이터가 사용하는 자료형과 맞지 않는 상황에서 해당 자료형을 사용하므로서 발생하는 문제에 대하여 리뷰한 사례입니다.
 
+
 ### 문제 코드
 ```c#
 /// TouchArea can expand the view's touchable area.
