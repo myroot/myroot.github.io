@@ -5,7 +5,7 @@ comments: true
 ---
 API를 설계하다보면, 어떤 객체에서 특정 상태에 있을때만 사용 가능한 API를 추가하는 경우가 발생합니다. 이 상황에 해당하는 대표적인 API가 멀티미디어 API중 Player API입니다. 
 
-![image](/assets/images/player_state_cs.png)
+![player_state_cs](https://github.sec.samsung.net/storage/user/376/files/7efea200-fb7e-11eb-9a35-6f6fa38800c1)
 
 
 Player API는 Prepare를 통해 Ready상태에 도달해야지만 `Start()`, `Stop()`, `SetPlayPositionAsync()`과 같은 API가 동작하고 Ready상태가 아닌 경우에는 해당 API를 사용한 경우 예외가 발생합니다.
