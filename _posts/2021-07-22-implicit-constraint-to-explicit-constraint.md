@@ -7,6 +7,7 @@ API를 설계하다보면, 어떤 객체에서 특정 상태에 있을때만 사
 
 ![image](/assets/images/player_state_cs.png)
 
+
 Player API는 Prepare를 통해 Ready상태에 도달해야지만 `Start()`, `Stop()`, `SetPlayPositionAsync()`과 같은 API가 동작하고 Ready상태가 아닌 경우에는 해당 API를 사용한 경우 예외가 발생합니다.
 
 이 처럼 명확한 동작에 대한 제약이 존재하지만, 그 제약은 단지 문서에만 설명되어 있을 뿐, API만 봐서는 그러한 제약이 존재하는 알 수 가 없습니다. API동작에 있어서 이런 동작에 대한 제약이 지금과 같이 암시적으로 문서로만 그 제약을 설명되어 있기 때문에 API사용자는 언제든 실수를 할 수 있는 여지가 존재합니다.
