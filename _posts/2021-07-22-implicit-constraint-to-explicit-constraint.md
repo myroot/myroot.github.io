@@ -220,11 +220,12 @@ Player API는 Prepare를 통해 Ready상태에 도달해야지만 `Start()`, `St
 이 API를 앱에서 사용되게 된다면 아래와 같은 모습이 됩니다.
 ```c#
     Player2 player = new Player2();
-    var session = player.Prepare();
-    session.Start();
-    session.Seek(100);
-    session.Stop();
-    session.Dispose();
+    using (var session = player.Prepare())
+    {
+        session.Start();
+        session.Seek(100);
+        session.Stop();
+    }
 ```
 `Prepare`를 통해 명시적으로 새로운 객체가 생성되고 해당 객체를 통해 해당 상태에서 동작할 수 있는 API를 사용할 수 있습니다. 만약 해당 상태에 도달하지 않은 경우라면 당연히 해당 객체를 획득하지 않은 상황이므로 해당 API를 구조적으로 호출하지 못하기 때문에 앞서 문제가 되었던 구조적으로 잘못된 상태에서 API호출이 가능했던 부분을 구조적으로 호출이 불가능하게 되었습니다.
 
