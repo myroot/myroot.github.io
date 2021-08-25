@@ -25,7 +25,7 @@ SynchronizationContext는 Current라는 ThreadLocal변수 제공하고 있습니
 ## SynchronizationContext와 비동기 작업
 그러면 어떻게 SynchronizationContext를 사용하여 비동기 작업의 결과를 main thread에 전달 하는지에 대해 알아보려고 합니다.
 
-일반적으로 비동기로 동작하는 작업은 main thread가 아닌 새로운 Thread를 생성하여 해당 thread에서 작업을 수행하게 되고 여기서 생성된 작업의 결과는 다시 SynchronizationContext를 통해 main thread로 전달되어 결과를 동기적으로 안정하게 사용할 수 있게 됩니다.
+일반적으로 비동기로 동작하는 작업은 main thread가 아닌 새로운 Thread를 생성하여 해당 thread에서 작업을 수행하게 되고 여기서 생성된 작업의 결과는 다시 SynchronizationContext를 통해 main thread로 전달되어 결과를 동기적으로 안전하게 사용할 수 있게 됩니다.
 
 ```c#
 static void RunHeavyTaskAndReturnOnCurrentThreadContext()
