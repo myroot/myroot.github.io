@@ -46,10 +46,5 @@ Event loop에서 각 이벤트가 발생했을때 사용자가 이를 처리하�
 보통 event loop을 사용하는 어플리케이션은 싱글 쓰레드를 사용하여 이벤트를 처리합니다. 이러한 특징으로 얻는 장점은 
 단일 쓰레드에서만 접근하는것을 약속하고 사용하기 때문에 handler에서 접근하는 데이터에 대해 race condition 상황을 걱정하지 않아도 됩니다. 만약 event loop을 사용하면서, worker thread를 사용하여 event loop에서 사용하는 데이터에 접근하려고 한다면, 앞선 가정이 깨지게 되어 race condition에 놓인 데이터에 대해 lock을 사용하여 race condition상황을 회피하도록 해야 합니다. 대부분의 UI작업은 Main event loop thread에서만 하도록 허용하고 있다. 그 이유가 이러한 race condition상황을 원천적으로 배제를 하기 위함입니다.
 
-### Event loop 라이브러리의 특징
- * 처리를 원하는 IO event를 등록하는 방법
- * 발생한 IO event 처리 하는 방법
- * event loop과 non-blocking option
-
 ### Task Queue
- * Event Loop의 또 다른 특징은 해당 Thread에 작업을 전달 하는 방법을 제공하는것 입니다. Event loop은 구현체에 따라 다양한 종류의 queue를 관리합니다. 예를 들어 IO작업이 완료된 이후에 바로 핸들러가 호출되어 처리되는 것이 아니라 IO완료 큐를 통해 순차적으로 작업이 처리됩니다. 그리고 Idler를 통해 등록된 작업들도, Idle상태에 진입하기 전에 순차적으로 수행이 됩니다. 이런 큐 구조의 특징으로 다른 Thread에서 event thread로 작업을 전달 할때도, 이 큐를 사용하게 됩니다. Idler에 task를 전달하는 방법으로는 구현체에 따라 `g_idle_add`, `ecore_idler_add`와 같은 함수가 제공됩니다. 
+ Event Loop의 또 다른 특징은 해당 Thread에 작업을 전달 하는 방법을 제공하는것 입니다. Event loop은 구현체에 따라 다양한 종류의 queue를 관리합니다. 예를 들어 IO작업이 완료된 이후에 바로 핸들러가 호출되어 처리되는 것이 아니라 IO완료 큐를 통해 순차적으로 작업이 처리됩니다. 그리고 Idler를 통해 등록된 작업들도, Idle상태에 진입하기 전에 순차적으로 수행이 됩니다. 이런 큐 구조의 특징으로 다른 Thread에서 event thread로 작업을 전달 할때도, 이 큐를 사용하게 됩니다. Idler에 task를 전달하는 방법으로는 구현체에 따라 `g_idle_add`, `ecore_idler_add`와 같은 함수가 제공됩니다. 
