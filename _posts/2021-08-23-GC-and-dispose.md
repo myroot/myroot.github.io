@@ -93,3 +93,5 @@ Dispose pattern에서 Dispose메소드는 아래와 같이 구현됩니다.
  * Dispose Pattern : [https://docs.microsoft.com/en-us/dotnet/standard/garbage-collection/implementing-dispose#implement-the-dispose-pattern](https://docs.microsoft.com/en-us/dotnet/standard/garbage-collection/implementing-dispose#implement-the-dispose-pattern)
 
  * Fundamentals of garbage collection : [https://docs.microsoft.com/en-us/dotnet/standard/garbage-collection/fundamentals](https://docs.microsoft.com/en-us/dotnet/standard/garbage-collection/fundamentals)
+
+ 
